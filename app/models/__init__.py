@@ -1,3 +1,8 @@
+'''
+Foundation: This is the data structure for the whole applicaiton,
+this lives in two tables.
+'''
+
 # generates random ID #s
 import uuid
 
