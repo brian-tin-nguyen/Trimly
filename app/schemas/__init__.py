@@ -15,6 +15,8 @@ from datetime import datetime
 # HttpUrl: makes sure that a field muust be real URL (http or https)
 from pydantic import BaseModel, HttpUrl
 
+from typing import Optional
+
 class ShortenRequest(BaseModel):
     url: HttpUrl
     model_config = {"from_attributes": True}
@@ -28,8 +30,8 @@ class ShortenResponse(BaseModel):
     
 class ClickResponse(BaseModel):
     clicked_at: datetime
-    ip_address: str | None
-    user_agent: str | None
+    ip_address: Optional[str]
+    user_agent: Optional[str]
     model_config = {"from_attributes": True}
 
 class AnalyticsResponse(BaseModel):
